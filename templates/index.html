@@ -1,0 +1,107 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load static %}
+{% block title %}{% trans "App name" %}{% endblock title %}
+{% block header %}
+
+{% endblock header %}
+{% block content %}
+<div class="div-width-100-text-center">
+	<h1>КГУ Шарбактинская СОШ</h1>	
+</div>
+<div class="part0">
+	<div class="row">
+		<h2 style="text-transform: uppercase; text-align: center;">Добро пожаловать</h2>
+	</div>
+	<div class="row">
+		<div class="col-md-8">
+			<p>Приветственное слово</p>
+			<p>Коротко о школе</p>
+		</div>
+		<div class="col-md-4">
+			<img src="{% static 'images/logo.png' %}" alt="dance" style="width:100%; padding: 10px;">
+		</div>
+	</div>
+</div>
+<hr>
+
+<div class="div-width-100-text-center">
+	<h3>Расписание звонков</h3>		
+</div>
+<div class="part2">
+	<div class="row" style="margin-top: 100px;">
+		Расписание звонков						
+	</div>
+</div>
+
+<hr><div class="div-width-100-text-center">
+	<h3>{% trans "reviewss" %}</h3>		
+</div>
+<div class="part3">
+	<div class="row" style="margin-top: 100px;">
+		{% if reviews14.count > 0 %}
+			{% for r in reviews14 %}
+				<div class="col-lg-3">
+					<p><div class="Stars" style='--rating: {{ r.rating| stringformat:".1f" }};'></div></p>							
+					<h6> {{ r.hotel }}</h6>
+					<!-- <h6>{% trans "Rating" %} {{ r.rating }}</h6>																				 -->
+					<p><small>{{ r.details | slice:"0:200" }}...</small></p>									
+					<h6> {{ r.username }}</h6>
+				</div>
+			{% endfor %}
+		{% endif %}								
+	</div>
+	<h3 style="text-align: center;" ><a href="{% url 'reviews_list' %}">{% trans "all reviews" %}</a></h3>
+</div>
+<hr>
+
+<div class="jumbotron">
+	<div class="div-width-100-text-center">
+		<h3>{% trans "newss" %}</h3>
+	</div>
+	<hr class="my-4">
+	<div class="row">
+		{% if news1.count > 0 %}
+		<div class="col-lg-9 border" style="padding:10px;">
+			{% for c in news1 %}
+				<center><p><strong>{{ c.daten | date:"d.m.Y H:i" }}</strong></p></center>
+				{% if c.photo.url == "/ media /images/news7.jpeg" %}
+					<img class="img-center" src="{% static 'images/news7.jpeg' %}" alt="{{ c.title }}" title="{{ c.details }}">
+				{% else %}
+					{% if c.photo.url != None %}
+						<img class="img-center" src="{{ c.photo.url}}" alt="{{ c.title }}" title="{{ c.details }}">
+					{% endif %}
+				{% endif %}
+				<h4><a href="{% url 'news_read' c.id %}">{{ c.title }}</a></h4>
+				<p>{{ c.details }}</p>
+			{% endfor %}
+		</div>
+		<div class="col-lg-3 border" style="padding:10px;">
+			{% if news24.count > 0 %}
+				{% for c in news24 %}
+				<center><p><strong>{{ c.daten | date:"d.m.Y H:i" }}</strong></p></center>
+				<div class="row">
+					{% if c.photo.url == "/ media /images/news4.jpeg" %}
+						<img class="img-center3" src="{% static 'images/news4.jpeg' %}" alt="{{ c.title }}" title="{{ c.details }}">
+					{% elif c.photo.url == "/ media /images/news5.jpeg" %}
+						<img class="img-center3" src="{% static 'images/news5.jpeg' %}" alt="{{ c.title }}" title="{{ c.details }}">
+					{% elif c.photo.url == "/ media /images/news6.jpeg" %}
+						<img class="img-center3" src="{% static 'images/news6.jpeg' %}" alt="{{ c.title }}" title="{{ c.details }}">
+					{% else %}
+						{% if c.photo.url != None %}
+							<img class="img-center3" src="{{ c.photo.url}}" alt="{{ c.title }}" title="{{ c.details }}">
+						{% endif %}
+					{% endif %}
+				</div>
+				<div class="row">
+					<h5><a href="{% url 'news_read' c.id %}">{{ c.title }}</a></h5>
+				</div>
+				<hr class="my-4">
+				{% endfor %}
+			{% endif %}
+		</div>
+		{% endif %}
+	</div>
+	<h3 style="text-align: center;" ><a href="{% url 'news_list' %}">{% trans "all newss" %}</a></h3>
+</div>
+{% endblock content %}

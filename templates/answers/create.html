@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{% trans "Ask a Question" %}{% endblock title %}
+{% block header %}{% trans "Ask a Question" %}{% endblock header %}
+{% block content %}
+<form method="POST" enctype="multipart/form-data">
+	{% csrf_token %}
+	<table>
+        {{ form }}
+    </table>
+	<button type="submit" class="btn btn-outline-success" style="width:100px">Сохранить</button>	
+    <button onclick="location.href='{% url 'answers_index' %}'" class="btn btn-outline-info" style="width:100px">Назад</button>	
+</form>
+<script type="text/javascript">
+	$(".chosen").chosen();
+</script>
+{% endblock content %}

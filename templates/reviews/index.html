@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{% trans "Reviews" %}{% endblock title %}
+{% block header %}{% endblock header %}
+{% block content %}
+<h2>{% trans "Reviews" %}</h2>
+{% if reviews.count > 0 %}
+<div class="row">
+	<table id="myTable" class="cell-border hover stripe" style="width:100%">
+		<thead>
+			<tr>
+				<th>{% trans "dater" %}</th>
+				<th>{% trans "details" %}</th>
+				<th>{% trans "user" %}</th>
+				<th><a href="{% url 'reviews_create'%}">{% trans "Add" %}</a></th>				
+			</tr>
+		</thead>
+		<tbody>
+			{% for r in reviews %}
+			<tr>
+				<td>
+					<p>{{ r.dater }}</p>
+				</td>
+				<td>
+					<p>{{ r.details }}</p>	
+				</td>
+				<td>
+					<p>{{ r.user }}</p>	
+				</td>
+				<td>
+					<!--<a href="{% url 'reviews_edit' r.id %}">{% trans "Change" %}</a> |-->
+					<a href="{% url 'reviews_read' r.id %}">{% trans "View" %}</a> |
+					<a onclick="return confirm('Удалить запись?')" href="{% url 'reviews_delete' r.id %}">{% trans "Delete" %}</a>
+				</td>			
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+</div>
+{% else %}
+<a href="{% url 'reviews_create'%}">{% trans "Create" %}</a>
+{% endif %}
+{% endblock content %}
+

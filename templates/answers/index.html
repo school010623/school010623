@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{% trans "Answers" %}{% endblock title %}
+{% block header %}{% endblock header %}
+{% block content %}
+<h2>{% trans "Answers" %}</h2>
+{% if answers.count > 0 %}
+<div class="row">
+	<table id="myTable" class="cell-border hover stripe" style="width:100%">
+		<thead>
+			<tr>
+				<th>{% trans "datea" %}</th>
+				<th>{% trans "username" %}</th>
+				<th>{% trans "question" %}</th>
+				<th>{% trans "answer" %}</th>
+				<th></th>				
+			</tr>
+		</thead>
+		<tbody>
+			{% for a in answers %}
+			<tr>
+				<td>
+					<p>{{ a.datea }}</p>
+				</td>
+				<td>
+					<p>{{ a.user }}</p>
+				</td>
+				<td>
+					<p>{{ a.question }}</p>	
+				</td>
+				<td>
+					<p>{{ a.answer }}</p>	
+				</td>
+				<td>
+					<a href="{% url 'answers_edit' a.id %}">{% trans "Change" %}</a> |
+					<a href="{% url 'answers_read' a.id %}">{% trans "View" %}</a> |
+					<a onclick="return confirm('Удалить запись?')" href="{% url 'answers_delete' a.id %}">{% trans "Delete" %}</a>
+				</td>			
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+</div>
+{% else %}
+<a href="{% url 'answers_create'%}">{% trans "Create" %}</a>
+{% endif %}
+{% endblock content %}
+

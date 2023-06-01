@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{% trans "Change" %}{% endblock title %}
+{% block header %}{% trans "Change" %}{% endblock header %}
+{% block content %}
+<form method="POST" enctype="multipart/form-data">
+	{% csrf_token %}
+    <table>
+        {{ form }}
+    </table>
+    <button type="submit" class="btn btn-outline-success" style="width:100px">Сохранить</button>
+	<a class="btn btn-outline-info" style="width:100px" href="{% url 'reviews_index' %}">Назад</a>    
+</form>
+<script type="text/javascript">
+	$(".chosen").chosen();
+</script>
+{% endblock content %}

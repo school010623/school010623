@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{% trans "Answers" %}{% endblock title %}
+{% block header %}{% endblock header %}
+{% block content %}
+<h2>{% trans "Answers" %}</h2>
+{% if user.is_authenticated %}
+<p><a href="{% url 'answers_create'%}">{% trans "Ask a Question" %}</a></p>	
+{% endif %}
+{% if answers.count > 0 %}
+<div class="row">
+	<table id="myTable" style="width:100%">
+		<thead>
+			<tr>
+				<th></th>				
+			</tr>
+		</thead>
+		<tbody>
+			{% for a in answers %}
+			<tr>
+				<td>
+					<div class="card">
+						<div class="card-header">
+							<h5>{{ a.question }}</h5>
+							<p>{{ a.user }}<p>							
+						</div>
+						<div class="card-body">					
+							<div class="row">
+								<p>{{ a.answer }}</p>
+							</div>
+						</div>
+						<div class="card-footer text-muted">
+							<p>{{ a.datea }}<p>
+						</div>
+					</div>
+				</td>	
+			</tr>
+			{% endfor %}	
+		</tbody>
+	</table>	
+</div>
+{% endif %}
+{% endblock content %}
+
