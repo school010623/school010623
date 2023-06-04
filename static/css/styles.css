@@ -5,8 +5,8 @@
 	--navbar-text-color: #1F7EFE;
 	--main-background-color-light: #FFFFFF;
 	--main-background-color-dark:  #FFFAFA;
-	--main-text-color: #74ACCD;
-	--main-header-color: #74ACCD;
+	--main-text-color: DarkBlue;
+	--main-header-color: DarkBlue;
 	--main-text-attention-color: Purple;
 	--footer-background-color-light: LightCyan;
 	--footer-background-color-dark:  Aquamarine;
@@ -16,7 +16,7 @@
 	--card-text-color: SeaGreen;
 	--table-background-color-light: #FFFFFF; 
 	--table-background-color-dark: #F5F5F5; 
-	--table-text-color: #74ACCD;	
+	--table-text-color: DarkBlue;	
 	/* Звездочки в оценке */
 	--star-size: 30px;
 	--star-color: LightYellow;

@@ -1,18 +1,73 @@
 {% extends "base.html" %}
 {% load i18n %}
+{% load static %}
 {% block title %}{% endblock title %}
 {% block header %}{% endblock header %} 
 {% block content %}
 <div class="div-width-100-text-center">
-	<h3>{% trans "administration" %}</h3>
+	<h3>Администрация школы</h3>
 </div>
 <div class="row">
-	<div class="col-md-3">
-		<h3 align="center">Администрация школы...</h3>
-		<p>Карточки с фото, ФИО и должностью руководства. Директор, завуч...</p>	
+	<div class="card">
+		<div class="card-header">
+			<h5 align="center">Директор</h5>
+		</div>
+		<div class="card-body">					
+			<div class="row">
+				<div class="col-md-8">
+					<h4 align="center">Бельгибаева Айжан Мейрамовна</h4>
+					<p>Категория: Педагог-иследователь</p>
+					<p>Общий педагогический стаж: 26</p>
+					<p>Общий стаж руководителя: 10</p>
+				</div>								
+				<div class="col-md-4">
+					<img src="{% static 'images/woman.jpg' %}" alt="woman" style="width:100%; padding: 10px;">
+				</div>
+			</div>
+		</div>
+		<div class="card-footer text-muted">
+			<p><p>
+		</div>
 	</div>
-	<div class="col-md-9" >
-		
+	
+	<div class="card">
+		<div class="card-header">
+			<h5 align="center">заместитель директора по методической работе</h5>
+		</div>
+		<div class="card-body">					
+			<div class="row">
+				<div class="col-md-8">
+					<h4 align="center">Мусжанова Анар Даулетовна</h4>
+					<p>Подробности</p>
+				</div>								
+				<div class="col-md-4">
+					<img src="{% static 'images/administration2.jpg' %}" alt="woman" style="width:100%; padding: 10px;">
+				</div>
+			</div>
+		</div>
+		<div class="card-footer text-muted">
+			<p><p>
+		</div>
 	</div>
+	
+	<!-- <div class="card"> -->
+		<!-- <div class="card-header"> -->
+			<!-- <h5 align="center">заместитель директора по воспитательной работе</h5> -->
+		<!-- </div> -->
+		<!-- <div class="card-body">					 -->
+			<!-- <div class="row"> -->
+				<!-- <div class="col-md-8"> -->
+					<!-- <h4 align="center">ФИО</h4> -->
+					<!-- <p>Подробности</p> -->
+				<!-- </div>								 -->
+				<!-- <div class="col-md-4"> -->
+					<!-- <img src="{% static 'images/woman.jpg' %}" alt="woman" style="width:100%; padding: 10px;"> -->
+				<!-- </div> -->
+			<!-- </div> -->
+		<!-- </div> -->
+		<!-- <div class="card-footer text-muted"> -->
+			<!-- <p><p> -->
+		<!-- </div> -->
+	<!-- </div> -->
 </div>
 {% endblock content %}

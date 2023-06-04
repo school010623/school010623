@@ -61,7 +61,9 @@ def contact(request):
 # Кабинет
 @login_required
 def cabinet(request):
-    reviews = Reviews.objects.filter(user_id=request.user.id).order_by('-dater')    
+    reviews = Reviews.objects.filter(user_id=request.user.id).order_by('-dater')   
+    print(reviews)
+    print(request.user.id)
     return render(request, "cabinet.html", { "reviews": reviews, })# Кабинет
 
 # Администрация
@@ -177,7 +179,7 @@ def reviews_index(request):
 
 # Список для просмотра
 def reviews_list(request):
-    reviews = Reviews.objects.all().order_by('dater')
+    reviews = Reviews.objects.all().order_by('-dater')
     return render(request, "reviews/list.html", {"reviews": reviews})
 
 # В функции create() получаем данные из запроса типа POST, сохраняем данные с помощью метода save()

@@ -12,14 +12,15 @@
 				<th>{% trans "dater" %}</th>
 				<th>{% trans "details" %}</th>
 				<th>{% trans "user" %}</th>
-				<th><a href="{% url 'reviews_create'%}">{% trans "Add" %}</a></th>				
+				<th></th>				
+				<!-- <th><a href="{% url 'reviews_create'%}">{% trans "Add" %}</a></th>				 -->
 			</tr>
 		</thead>
 		<tbody>
 			{% for r in reviews %}
 			<tr>
 				<td>
-					<p>{{ r.dater }}</p>
+					<p>{{ r.dater | date:"d.m.Y H:i"}}</p>
 				</td>
 				<td>
 					<p>{{ r.details }}</p>	

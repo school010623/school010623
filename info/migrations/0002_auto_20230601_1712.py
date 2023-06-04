@@ -62,33 +62,57 @@ def beginning(apps, schema_editor):
 
     answers = Answers()
     answers.datea = datetime.now() - timedelta(days=30)
-    answers.question = 'Вопрос'
-    answers.answer = 'Ответ'
+    answers.question = 'Здравствуйте! Подскажите ФИО преподавателей у которых будет 2 класс в 2023-2024 учебном году?'
+    answers.answer = 'Здравствуйте! Нагрузка учителей по классам распределяется в конце августа.'
     answers.user_id = 3
     answers.specialist_id = 2
     answers.save()
 
     answers = Answers()
     answers.datea = datetime.now() - timedelta(days=30)
-    answers.question = 'Вопрос'
-    answers.answer = 'Ответ'
+    answers.question = 'Есть нулевые классы в школах?'
+    answers.answer = 'Здравствуйте! 0 класса в нашей школе нет'
     answers.user_id = 4
     answers.specialist_id = 2
     answers.save()
 
     answers = Answers()
     answers.datea = datetime.now() - timedelta(days=30)
-    answers.question = 'Вопрос'
-    answers.answer = 'Ответ'
+    answers.question = 'Здравствуйте, подскажите у вас в школе есть продленка?'
+    answers.answer = 'Здравствуйте. В школе продленки нет.'
     answers.user_id = 5
     answers.specialist_id = 2
     answers.save()
 
     answers = Answers()
     answers.datea = datetime.now() - timedelta(days=30)
-    answers.question = 'Вопрос'
-    answers.answer = 'Ответ'
+    answers.question = 'Здравствуйте,как зовут руководителя организации школы?'
+    answers.answer = 'Здравствуйте! Директора школы зовут Бельгибаева Айжан Мейрамовна'
     answers.user_id = 6
+    answers.specialist_id = 2
+    answers.save()
+
+    answers = Answers()
+    answers.datea = datetime.now() - timedelta(days=30)
+    answers.question = 'Здравствуйте, подскажите пожалуйста по каким дням и в какое время ,принимает директор школы, родителей учащихся.'
+    answers.answer = 'Здравствуйте! Директор принимает в понедельник с 9:00 до 12:00'
+    answers.user_id = 7
+    answers.specialist_id = 2
+    answers.save()
+
+    answers = Answers()
+    answers.datea = datetime.now() - timedelta(days=30)
+    answers.question = 'Какие школьные принадлежности нужны первоклассников?'
+    answers.answer = 'Здравствуйте. В первых числах августа на нашем сайте и в сети Instagram будет опубликован список школьных принадлежностей для будущих первоклассников.'
+    answers.user_id = 8
+    answers.specialist_id = 2
+    answers.save()
+
+    answers = Answers()
+    answers.datea = datetime.now() - timedelta(days=30)
+    answers.question = 'Здравствуйте. Скажите пожалуйста, кто из учителей набирает 1 классы в 2023 году?'
+    answers.answer = 'Здравствуйте! Классные руководители первых классов будут известны в начале августа.'
+    answers.user_id = 9
     answers.specialist_id = 2
     answers.save()
 
@@ -98,28 +122,39 @@ def beginning(apps, schema_editor):
     
     reviews = Reviews()
     reviews.dater = datetime.now() - timedelta(days=30)
-    reviews.details = 'Отзыв'
-    reviews.user_id = 3
+    reviews.details = 'Добрый день! Школа очень хорошая старшей дочке нравится, быстро привыкла нашла общий язык с классом.'
+    reviews.user_id = 10
     reviews.save()
 
     reviews = Reviews()
     reviews.dater = datetime.now() - timedelta(days=25)
-    reviews.details = 'Отзыв'
-    reviews.user_id = 4
+    reviews.details = 'Здравствуйте! Спасибо, особенно, Ильвире Асраровне, Малике Каримовне и Ильхаму Ирисметовичу. Это самые лучшие учителя. Они всех направляют на хороший путь. Спасибо!'
+    reviews.user_id = 11
     reviews.save()
 
     reviews = Reviews()
     reviews.dater = datetime.now() - timedelta(days=20)
-    reviews.details = 'Отзыв'
-    reviews.user_id = 5
+    reviews.details = 'Бывший выпускник школы (выпуск 1994 год)Спасибо этой школе! Большой поклон всем учителям, которые дали эти знания! Особенно Галине Павловне, Элеоноре Михайловне, и всем педагогам школы! Здоровья и счастья Вам!'
+    reviews.user_id = 13
     reviews.save()
     
     reviews = Reviews()
     reviews.dater = datetime.now() - timedelta(days=15)
-    reviews.details = 'Отзыв'
-    reviews.user_id = 6
+    reviews.details = 'Хорошие и отзывчивые учителя.'
+    reviews.user_id = 14
     reviews.save()
-
+    
+    reviews = Reviews()
+    reviews.dater = datetime.now() - timedelta(days=15)
+    reviews.details = 'Хорошие учителя, еда нормальная и кабинеты чистые, но ученики шумные. В целом все отлично, только проблема дисциплины.'
+    reviews.user_id = 15
+    reviews.save()
+    
+    reviews = Reviews()
+    reviews.dater = datetime.now() - timedelta(days=15)
+    reviews.details = 'Супер школа. Спасибо всем учителям.'
+    reviews.user_id = 16
+    reviews.save()
     
     ##### Новости #####
 
@@ -127,57 +162,56 @@ def beginning(apps, schema_editor):
     
     news = News()
     news.daten = datetime.now() - timedelta(days=35)
-    news.title = 'Заголовок'
-    news.details = """Новость
+    news.title = 'Славим Книгу'
+    news.details = """24 января в школе в 6 «А» классе прошел открытый классный час «Славим Книгу», по проекту «Читающая школа». Цель: формировать интерес и уважение к книге и к чтению. На классный час были приглашены родители. Библиотекарь школы-лицея Шевелёва Л.Г. подробнее рассказала о проекте "Читающая школа", познакомила с целью, задачами и направлениями проекта. Учащиеся подвели итог работы классса по проекту «Читающая школа» за 2021-2022 учебный год и за период этого учебного года. Ребята продемонстрировали свои таланты: играли на музыкальных инструментах, пели, читали стихи. Классный руководитель Кереева Н.Ж вместе с учителем русского языка и литературы Замниборщ Н.В. провели тестирование среди учащихся 6 «А» класса по произведению Н.С. Лескова «Привидение в инженерном замке», итоги которого подвел родительский комитет, вручив учащимся грамоты и призы.
     """
     news.photo = 'images/news1.jpeg' 
     news.save()
     
     news = News()
     news.daten = datetime.now() - timedelta(days=30)
-    news.title = 'Заголовок'
-    news.details = """Новость
+    news.title = 'Прошел областной этап национального дебатного турнира'
+    news.details = """Во дворце школьников 24 января прошел областной этап национального дебатного турнира, среди учащихся 9-11 классов, организованный центром дополнительного образования «Дарын». К русскоязычной и казахской лигам в этом году прибавилась англоязычная лига. В англоязычной лиге победу одержала команда «Олимп» нашей школы. 
     """
     news.photo = 'images/news2.jpeg' 
     news.save()
     
     news = News()
     news.daten = datetime.now() - timedelta(days=25)
-    news.title = 'Заголовок'
-    news.details = """Новость
-
+    news.title = 'Читающая школа'
+    news.details = """В школе продолжается работа по проекту "Читающая школа". ▶️ По второму направлению: "Свободное пространство для чтения", "Читай 20 минут, пиши эссе за 3 минуты". Принимали участие 5 классы.. Учащиеся, читали вслух, на перемене. Дети с удовольствием продемонстрировали своё умение читать вслух. Одно из важных преимуществ чтения книг — это тот положительный эффект, который оно оказывает на наше мышление.
     """
     news.photo = 'images/news3.jpeg' 
     news.save()
     
     news = News()
     news.daten = datetime.now() - timedelta(days=20)
-    news.title = 'Заголовок'
-    news.details = """Новость
+    news.title = 'За чистоту и порядок!'
+    news.details = """25 марта стартовал санитарно-экологический месячник, который продлится до 29 апреля. Субботник организован для санитарной очистки территории города. В рамках проведения месячника 25 марта в школе прошёл субботник. Была проделана большая работа: убрана вся территория вокруг школы от листвы, сухой травы, убраны пришкольный участок и спортивная площадка.
     """
     news.photo = 'images/news4.jpeg' 
     news.save()
     
     news = News()
     news.daten = datetime.now() - timedelta(days=15)
-    news.title = 'Заголовок'
-    news.details = """Новость
+    news.title = 'Проект «Герань» - отчет 5Б, 6Б, 6В, 7А, 7Б, 8Б, 9А, 9Б, 10А, 10Б'
+    news.details = """Проект "Герань" в Школе-лицее №35 продолжается. Ребята выращивают герань дома и отчитываются перед лицеем, рассказывают об успехах и проблемах, связанных с выращиванием цветов. Работа ребят 5"Б", 6"Б", 6"В", 7"А", 7"Б", 8"Б", 9"А", 9"Б", 10"А", 10"Б" представлены в их видео презентациях.
     """
     news.photo = 'images/news5.jpeg' 
     news.save()
     
     news = News()
     news.daten = datetime.now() - timedelta(days=10)
-    news.title = 'Заголовок'
-    news.details = """Новость
+    news.title = 'Учебно-полевые сборы'
+    news.details = """С 15 по 19 мая 2023 года учащиеся школы, юноши 10-х классов, принимают участие в учебно-полевых сборах на базе государственного коммунального казенного предприятия «Городской центр детско-юношеского туризма и экологии «Атамекен».
     """
     news.photo = 'images/news6.jpeg' 
     news.save()
     
     news = News()
     news.daten = datetime.now() - timedelta(days=5)
-    news.title = 'Заголовок'
-    news.details = """Новость
+    news.title = 'Парад олимпийцев'
+    news.details = """5 мая в школе-лицее №35 прошел “Парад олимпийцев”. По красной дорожке гордо прошли ученики лицея - олимпиадники городского, областного и заключительного этапов республиканской олимпиады по общеобразовательным предметам.
     """
     news.photo = 'images/news7.jpeg' 
     news.save()
