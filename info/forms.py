@@ -27,13 +27,14 @@ class AnswersFormCreate(forms.ModelForm):
 class AnswersFormEdit(forms.ModelForm):
     class Meta:
         model = Answers
-        fields = ('datea', 'question', 'answer', 'user', 'specialist')
+        #fields = ('datea', 'question', 'answer', 'user', 'specialist')
+        fields = ('datea', 'question', 'answer', 'user')
         widgets = {
             'datea': TextInput(attrs={"type":"date", "readonly": "readonly"}),
             'question': Textarea(attrs={'cols': 80, 'rows': 10, "readonly": "readonly"}),
             'answer': Textarea(attrs={'cols': 80, 'rows': 10}),
             'user': TextInput(attrs={"readonly": "readonly"}),
-            'specialist': TextInput(attrs={"readonly": "readonly"}),
+            #'specialist': TextInput(attrs={"readonly": "readonly"}),
         }
 
 class ReviewsForm(forms.ModelForm):

@@ -26,7 +26,11 @@
 						</div>
 						<div class="card-body">					
 							<div class="row">
-								<p>{{ a.answer }}</p>
+								<p>
+								{% if a.answer != None %}
+									{{ a.answer }}
+								{% endif %}								
+								</p>
 							</div>
 						</div>
 						<div class="card-footer text-muted">

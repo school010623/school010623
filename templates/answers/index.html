@@ -29,7 +29,11 @@
 					<p>{{ a.question }}</p>	
 				</td>
 				<td>
-					<p>{{ a.answer }}</p>	
+					<p>
+						{% if a.answer != None %}
+							{{ a.answer }}
+						{% endif %}								
+					</p>	
 				</td>
 				<td>
 					<a href="{% url 'answers_edit' a.id %}">{% trans "Change" %}</a> |
