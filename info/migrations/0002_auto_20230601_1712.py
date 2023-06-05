@@ -77,7 +77,7 @@ def beginning(apps, schema_editor):
     answers.save()
 
     answers = Answers()
-    answers.datea = datetime.now() - timedelta(days=30)
+    answers.datea = datetime.now() - timedelta(days=27)
     answers.question = 'Здравствуйте, подскажите у вас в школе есть продленка?'
     answers.answer = 'Здравствуйте. В школе продленки нет.'
     answers.user_id = 5
@@ -85,7 +85,7 @@ def beginning(apps, schema_editor):
     answers.save()
 
     answers = Answers()
-    answers.datea = datetime.now() - timedelta(days=30)
+    answers.datea = datetime.now() - timedelta(days=24)
     answers.question = 'Здравствуйте,как зовут руководителя организации школы?'
     answers.answer = 'Здравствуйте! Директора школы зовут Бельгибаева Айжан Мейрамовна'
     answers.user_id = 6
@@ -93,7 +93,7 @@ def beginning(apps, schema_editor):
     answers.save()
 
     answers = Answers()
-    answers.datea = datetime.now() - timedelta(days=30)
+    answers.datea = datetime.now() - timedelta(days=21)
     answers.question = 'Здравствуйте, подскажите пожалуйста по каким дням и в какое время ,принимает директор школы, родителей учащихся.'
     answers.answer = 'Здравствуйте! Директор принимает в понедельник с 9:00 до 12:00'
     answers.user_id = 7
@@ -101,7 +101,7 @@ def beginning(apps, schema_editor):
     answers.save()
 
     answers = Answers()
-    answers.datea = datetime.now() - timedelta(days=30)
+    answers.datea = datetime.now() - timedelta(days=18)
     answers.question = 'Какие школьные принадлежности нужны первоклассников?'
     answers.answer = 'Здравствуйте. В первых числах августа на нашем сайте и в сети Instagram будет опубликован список школьных принадлежностей для будущих первоклассников.'
     answers.user_id = 8
@@ -109,7 +109,7 @@ def beginning(apps, schema_editor):
     answers.save()
 
     answers = Answers()
-    answers.datea = datetime.now() - timedelta(days=30)
+    answers.datea = datetime.now() - timedelta(days=15)
     answers.question = 'Здравствуйте. Скажите пожалуйста, кто из учителей набирает 1 классы в 2023 году?'
     answers.answer = 'Здравствуйте! Классные руководители первых классов будут известны в начале августа.'
     answers.user_id = 9
@@ -145,13 +145,13 @@ def beginning(apps, schema_editor):
     reviews.save()
     
     reviews = Reviews()
-    reviews.dater = datetime.now() - timedelta(days=15)
+    reviews.dater = datetime.now() - timedelta(days=10)
     reviews.details = 'Хорошие учителя, еда нормальная и кабинеты чистые, но ученики шумные. В целом все отлично, только проблема дисциплины.'
     reviews.user_id = 15
     reviews.save()
     
     reviews = Reviews()
-    reviews.dater = datetime.now() - timedelta(days=15)
+    reviews.dater = datetime.now() - timedelta(days=5)
     reviews.details = 'Супер школа. Спасибо всем учителям.'
     reviews.user_id = 16
     reviews.save()

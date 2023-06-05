@@ -19,7 +19,9 @@
 			<p><strong>{{ reviews.dater }}</strong></p>
 		</div>		
 	</div>
-	<a class="btn btn-outline-info" style="width:100px; margin-top:5px" href="{% url 'reviews_index' %}">Назад</a>    	
+	<div class="div-button-left">
+		<a class="btn btn-outline-info" style="width:100px; margin-top:5px" onclick="history.back()">{% trans "Back" %}</a>    
+	</div>
 </div>
 
 {% endblock content %}
