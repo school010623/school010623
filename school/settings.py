@@ -84,10 +84,20 @@ WSGI_APPLICATION = 'school.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
+    #'default': {
+    #    'ENGINE': 'django.db.backends.sqlite3',
+    #    'NAME': BASE_DIR / 'db.sqlite3',
+    #}
+    
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'school_yt4j',
+        'USER' : 'school_admin',
+        'PASSWORD' : 'FtyB92FocV5CbgVXc4GFwZt0cveDntny',
+        'HOST' : 'dpg-chvj6n64dad1r0bchuc0-a.frankfurt-postgres.render.com',
+        'PORT' : '5432',
     }
+
 }
 
 
